@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
             en: 'Your trusted destination for the best laptops, professional maintenance services, and genuine accessories'
         },
         // ترجمة نصوص الأزرار
+        'btn-store': { ar: 'زيارة متجرنا', en: 'Visit Our Store' },
         'btn-facebook': { ar: 'فيسبوك', en: 'Facebook' },
         'btn-tiktok': { ar: 'تيك توك', en: 'TikTok' },
         'btn-instagram': { ar: 'انستغرام', en: 'Instagram' },
@@ -69,9 +70,10 @@ document.addEventListener('DOMContentLoaded', () => {
         for (const id in translations) {
             const element = document.getElementById(id);
             if (element) {
-                // إذا كان العنصر زر يحتوي أيقونة (i)، نحافظ على الأيقونة ونغير النص
-                if (element.querySelector('i')) {
-                    const icon = element.querySelector('i').outerHTML;
+                // إذا كان العنصر زر يحتوي أيقونة (i أو img)، نحافظ على الأيقونة ونغير النص
+                const iconElement = element.querySelector('i, img, .btn-logo');
+                if (iconElement) {
+                    const icon = iconElement.outerHTML;
                     // يتم إدخال الأيقونة + مسافة + النص المترجم
                     element.innerHTML = icon + ' ' + translations[id][lang];
                 } else {

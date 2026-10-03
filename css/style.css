@@ -242,12 +242,30 @@ h1 {
 .btn:nth-child(6) {
     animation-delay: 1.7s;
 }
+.btn:nth-child(7) {
+    animation-delay: 1.8s;
+}
 
 /* --- تنسيق الأيقونات (Icons) --- */
 .btn i {
     font-size: 20px;
     margin-right: 10px; 
     margin-left: 0;
+}
+
+.btn-logo {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    object-fit: contain;
+    background-color: #000000;
+    margin-right: 10px; 
+    margin-left: 0;
+    vertical-align: middle;
+    flex-shrink: 0;
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+    transition: transform var(--transition-speed) ease;
 }
 
 /* --- تلوين الأزرار (الخلفية والأيقونة) --- */
@@ -276,6 +294,13 @@ h1 {
 #lang-toggle:hover {
     background-color: rgba(255, 255, 255, 0.4);
     border-color: white;
+}
+
+.store { 
+    background: linear-gradient(90deg, #ffffff 0%, #e53935 100%); 
+    color: #1a1a1a; 
+    font-weight: 700;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.45);
 }
 
 .facebook { 
@@ -343,6 +368,16 @@ h1 {
 /* 🔑 التأكد من أن لون الأيقونة يبقى أبيض عند التمرير */
 .btn:hover i {
     color: #ffffff !important; 
+}
+
+/* الحفاظ على تباين نص زر المتجر وحركة الشعار عند التمرير */
+.store:hover {
+    color: #1a1a1a !important;
+    opacity: 0.85;
+}
+
+.store:hover .btn-logo {
+    transform: scale(1.08);
 }
 /* مثال لكيفية تعريف خط Spinwerad */
 
